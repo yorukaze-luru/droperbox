@@ -17,7 +17,7 @@ def create_dbx():
         dbx.users_get_current_account()
         return dbx
 
-def download(token,file_name):
+def download(file_name:int):
     try:
         dbx = create_dbx()
         with open(file_name, "wb") as f:
@@ -29,7 +29,7 @@ def download(token,file_name):
         return False
     
     
-def upload(file_name):
+def upload(file_name:int):
     try:
         dbx = create_dbx()
         with open(file_name, "rb") as fc:

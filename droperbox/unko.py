@@ -1,2 +1,0 @@
-def deru():
-    print('puripuri')

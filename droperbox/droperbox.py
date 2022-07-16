@@ -29,7 +29,7 @@ def download(token,file_name):
         return False
     
     
-def upload(file_name)
+def upload(file_name):
     try:
         dbx = create_dbx()
         with open(file_name, "rb") as fc:

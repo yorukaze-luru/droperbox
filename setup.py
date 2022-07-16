@@ -6,7 +6,7 @@ install_requires = [
 
 setup(
     name='droperbox',
-    version='0.0.2',
+    version=droperbox.__version__,
     packages=find_packages(),
     install_requires=install_requires
 )

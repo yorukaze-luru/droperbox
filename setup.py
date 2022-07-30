@@ -3,13 +3,17 @@ import droperbox
 
 VERSION = droperbox.__version__
 
-def _requires_from_file(filename):
-    return open(filename).read().splitlines()
+requirements = []
+with open('requirements.txt') as f:
+     requirements = f.read().splitlines()
+
+packages = [
+    'droperbox',
+]
 
 setup(
     name='droperbox',
     version=VERSION,
-    packages=find_packages(where='droperbox'),
-    package_dir={'': 'droperbox'},
-    install_requires=_requires_from_file('requirements.txt'),
+    packages=packages
+    install_requires=requirements,
 )

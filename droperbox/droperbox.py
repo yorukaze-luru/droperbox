@@ -1,4 +1,4 @@
-from . import dropbox
+from .. import dropbox
 
 _token = {
     "token": None

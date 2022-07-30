@@ -14,6 +14,6 @@ packages = [
 setup(
     name='droperbox',
     version=VERSION,
-    packages=packages
+    packages=packages,
     install_requires=requirements,
 )

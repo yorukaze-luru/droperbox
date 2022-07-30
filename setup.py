@@ -9,6 +9,7 @@ def _requires_from_file(filename):
 setup(
     name='droperbox',
     version=VERSION,
-    packages=find_packages(),
+    packages=find_packages(where='droperbox'),
+    package_dir={'': 'droperbox'},
     install_requires=_requires_from_file('requirements.txt'),
 )

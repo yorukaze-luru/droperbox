@@ -1,15 +1,14 @@
-from setuptools import setup, find_packages
+from setuptools import setup, Extension, find_packages
 import droperbox
 
 VERSION = droperbox.__version__
 
-install_requires = [
-    'dropbox',
-]
+def _requires_from_file(filename):
+    return open(filename).read().splitlines()
 
 setup(
     name='droperbox',
     version=VERSION,
     packages=find_packages(),
-    install_requires=install_requires
+    install_requires=_requires_from_file('requirements.txt'),
 )

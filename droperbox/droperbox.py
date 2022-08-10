@@ -13,10 +13,9 @@ def create_dbx(dropbox):
     if token != None:
         dbx = dropbox.Dropbox()
         dbx.users_get_current_account()
-        return dbx
+        return True, dbx
     else:
-        print('Not Token')
-        return False
+        return False, print('Not Token')
 
     
 def download(dropbox,file_name:int):

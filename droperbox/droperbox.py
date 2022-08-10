@@ -11,7 +11,7 @@ def get_token():
 def create_dbx(dropbox):
     token = get_token()
     if token != None:
-        dbx = dropbox.Dropbox()
+        dbx = dropbox.Dropbox(token)
         return True, dbx
     else:
         return False, 'Not Token'

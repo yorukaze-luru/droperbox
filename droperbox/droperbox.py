@@ -23,7 +23,9 @@ def download(dropbox,file_name:int):
         if check == False:
             return False, dbx
         elif check == True:
-            dbx.files_download_to_file(f'{file_name}', f'/{file_name}')
+            with open(file_name, "wb") as f:
+                metadata, res = dbx.files_download(path=f"/{file_name}")
+                f.write(res.content)
             return True, 'Success'
     except Exception as e:
         return False, e
@@ -35,7 +37,9 @@ def upload(dropbox,file_name:int):
         if check == False:
             return False, dbx
         elif check == True:
-            dbx.files_upload(open(f'{file_name}', 'rb').read(), f'/{file_name}')
+            with open(file_name, 'rb') as f:
+                data = f.read()
+                res = dbx.files_upload(data=data, path=f'/{file_name}', mode=dropbox.files.WriteMode.overwrite)
             return True, 'Success'
     except Exception as e:
         return False, e

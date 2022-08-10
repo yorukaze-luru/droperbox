@@ -12,19 +12,16 @@ def create_dbx(dropbox):
     token = get_token()
     if token != None:
         dbx = dropbox.Dropbox()
-        dbx.users_get_current_account()
         return True, dbx
     else:
-        return False, print('Not Token')
+        return False, 'Not Token'
 
     
 def download(dropbox,file_name:int):
     try:
         dbx = create_dbx(dropbox)
-        with open(file_name, "wb") as f:
-            metadata, res = dbx.files_download(path=f"/{file_name}")
-            f.write(res.content)
-            return True, 'Success'
+        dbx.files_download_to_file(f'{file_name}', f'/{file_name}')
+        return True, 'Success'
     except Exception as e:
         return False, e
     
@@ -32,8 +29,7 @@ def download(dropbox,file_name:int):
 def upload(dropbox,file_name:int):
     try:
         dbx = create_dbx(dropbox)
-        with open(file_name, "rb") as fc:
-            dbx.files_upload(fc.read(), f"/{file_name}", mode=dropbox.files.WriteMode("overwrite"))
+        dbx.files_upload(open(f'{file_name}', 'rb').read(), f'/{file_name}')
         return True, 'Success'
     except Exception as e:
         return False, e

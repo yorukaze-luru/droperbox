@@ -41,7 +41,7 @@ def upload(dropbox,file_name:int):
         elif check == True:
             with open(file_name, 'rb') as f:
                 data = f.read()
-                res = dbx.files_upload(data=data, path=f'/{file_name}', mode=dropbox.files.WriteMode.overwrite)
+                res = dbx.files_upload(f=data, path=f'/{file_name}', mode=dropbox.files.WriteMode.overwrite)
             return True, 'Success'
         else:
             return False, 'Error'

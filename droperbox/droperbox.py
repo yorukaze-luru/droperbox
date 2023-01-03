@@ -1,3 +1,13 @@
+import Dropbox
+
+
+class MyClass:
+    def __init__(self, token):
+        self.token = token
+
+    def download(file_name:int):
+        
+
 _token = {
     "token": None
 }

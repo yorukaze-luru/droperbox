@@ -1,12 +1,32 @@
-import Dropbox
+from dropbox import Dropbox
 
 
-class MyClass:
+class Droperbox:
     def __init__(self, token):
         self.token = token
 
+    def _create_dbx():
+        token = self.token
+        if token != None:
+            dbx = Dropbox(token)
+            return True, dbx
+        else:
+            return False, 'Not Token'
+
     def download(file_name:int):
-        
+        try:
+            check, dbx = _create_dbx()
+            if check == False:
+                return False, dbx
+            elif check == True:
+                with open(file_name, "wb") as f:
+                    metadata, res = dbx.files_download(path=f"/{file_name}")
+                    f.write(res.content)
+                return True, 'Success'
+            else:
+                return False, 'Error'
+        except Exception as e:
+            return False, e
 
 _token = {
     "token": None
@@ -21,7 +41,7 @@ def get_token():
 def create_dbx(dropbox):
     token = get_token()
     if token != None:
-        dbx = dropbox.Dropbox(token)
+        dbx = Dropbox(token)
         return True, dbx
     else:
         return False, 'Not Token'

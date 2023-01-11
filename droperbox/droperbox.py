@@ -19,7 +19,7 @@ class Droperbox:
             if check == False:
                 return False, dbx
             elif check == True:
-                with open(file_name, "wb") as f:
+                with open(file_path, "wb") as f:
                     metadata, res = dbx.files_download(path=f"/{file_name}")
                     f.write(res.content)
                 return True, 'Success'

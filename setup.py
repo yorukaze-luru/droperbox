@@ -3,8 +3,12 @@ import droperbox
 
 VERSION = droperbox.__version__
 
-def _requires_from_file(filename):
-    return open(filename).read().splitlines()
+import os
+
+def load_requires_from_file(fname):
+    if not os.path.exists(fname):
+        raise IOError(fname)
+    return [pkg.strip() for pkg in open(fname, 'r')]
 
 packages = [
     'droperbox',
@@ -14,6 +18,6 @@ setup(
     name='droperbox',
     version=VERSION,
     packages=find_packages(),
-    install_requires=_requires_from_file('requirements.txt'),
+    install_requires=load_requires_from_file('requirements.txt'),
     include_package_data=True,
 )

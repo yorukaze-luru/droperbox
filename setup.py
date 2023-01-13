@@ -16,8 +16,9 @@ packages = [
 
 setup(
     name='droperbox',
+    url="https://github.com/8ka1alu/droperbox",
     version=VERSION,
     packages=find_packages(),
-    install_requires=load_requires_from_file('requirements.txt'),
     include_package_data=True,
+    install_requires=load_requires_from_file('requirements.txt'),
 )

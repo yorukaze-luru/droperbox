@@ -28,7 +28,7 @@ print(status, message)
 # 補足
 使い方のstatus, messageについて
 ・statusは問題無いかあるかの判定です。
-True,Falseが返ってきます
+True,Falseが返ってきます。
 
 ・messageはstatusに対するメッセージです。
-Trueの場合Success,Falseの場合エラー内容
+Trueの場合Success,Falseの場合エラー内容が帰ってきます。

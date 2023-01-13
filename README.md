@@ -25,3 +25,10 @@ print(status, message)
 status, message = dpb.upload(file_name=file_name)
 print(status, message)
 ```
+# 補足
+使い方のstatus, messageについて
+・statusは問題無いかあるかの判定です。
+True,Falseが返ってきます
+
+・messageはstatusに対するメッセージです。
+Trueの場合Success,Falseの場合エラー内容

@@ -1,4 +1,4 @@
-from droperbox import Dropbox
+from dropbox import Dropbox
 
 class Droperbox:
     def __init__(self, token):

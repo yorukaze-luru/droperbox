@@ -1,7 +1,6 @@
 from setuptools import setup, Extension, find_packages
-import droperbox
 
-VERSION = droperbox.__version__
+VERSION = '2.0.1'
 
 import os
 

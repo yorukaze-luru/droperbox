@@ -31,4 +31,4 @@ print(status, message)
 True,Falseが返ってきます。
 
 ・messageはstatusに対するメッセージです。  
-Trueの場合Success,Falseの場合エラー内容が帰ってきます。
+Trueの場合Success,Falseの場合エラー内容が返ってきます。

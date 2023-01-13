@@ -15,5 +15,7 @@ setup(
     name='droperbox',
     version=VERSION,
     packages=find_packages(),
-    install_requires=requirements,
+    install_requires=[
+        "dropbox >= 11.33.0",
+    ],
 )

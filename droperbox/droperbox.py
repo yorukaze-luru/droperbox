@@ -27,7 +27,7 @@ class Droperbox:
         except Exception as e:
             return False, e   
     
-    def upload(dropbox,file_name:int):
+    def upload(self,file_name:int):
         try:
             check, dbx = Droperbox._create_dbx(self)
             if check == False:

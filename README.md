@@ -12,6 +12,7 @@ Dropboxのapiトークンを取得
 
 # 使い方
 ```python
+import os
 from droperbox import Droperbox
 
 file_name = 'hoge.txt' #扱いたい任意のファイル名

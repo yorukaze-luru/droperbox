@@ -15,7 +15,7 @@ packages = [
 
 setup(
     name='droperbox',
-    url="https://github.com/8ka1alu/droperbox",
+    url="https://github.com/yorukaze-luru/droperbox",
     version=VERSION,
     packages=find_packages(),
     include_package_data=True,
